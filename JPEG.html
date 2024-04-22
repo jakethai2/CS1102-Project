@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPEG Page</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <h2>JPEG</h2>  
+    <section>
+        <h3>Introduction</h3>
+        <p>The "Joint Photographic Experts Group" is the organization that established the JPEG image compression standard. It became recognized as an international standard in 1992. JPEG is a technique for lossy image compression. The DCT (Discrete Cosine Transform) technique is used in JPEG compression to transform the code. It permits a trade-off between storage capacity and adjustable compression ratio. Many picture file formats use JPEG compression.</p>
+        
+        <p>JPEG/Exif is the most widely used picture format for digital cameras and other photo capture equipment. It is also the most often used format for storing and transferring photos on the Internet, along with JPEG/JFIF. These file formats are commonly referred to as JPEGs without any differentiation. Except for previous versions of Internet Explorer, which provide a MIME type of image/pjpeg when uploading JPEG images, the MIME media type for JPEG is image/jpeg.</p>
+        
+        <p>The filename extensions .jpg or .jpeg are typically used for JPEG files. JPEG/JFIF allows for an aspect ratio of 1:1 and a maximum picture size of 65,535×65,535 pixels, or up to 4 gigapixels. The JPEG group released JPEG 2000 in 2000 as a format that was meant to be a replacement; however, it was unable to overtake the original JPEG as the industry standard for images.</p>
+    </section>
+    
+    <section>
+        <h4>JPEG Compreesion</h4>
+        <p>JPEG compression is a technique for reducing image file sizes without sacrificing visual quality standards. It works with smoothly transitioning colors and tones in paintings and photos. The discrete cosine transform (DCT), which transforms a picture from the spatial domain to the frequency domain, is the foundation of the compression technique.</p>
+
+        <p>High-frequency information, like abrupt changes in color hue and intensity, is eliminated during compression using a perceptual model modeled after the human visual system. Quantization is the term for this information reduction. Next, a compressed bitstream containing the quantized coefficients is assembled and packaged.</p>
+        
+        <p>The primary compression technique used in JPEG files is lossy compression, which means that some of the original image data is permanently destroyed and cannot be entirely recovered. An image's quality and file size can be traded off by adjusting the compression ratio. The file size decreases with a higher compression ratio, but the loss of visual artifacts and image details is more pronounced.</p>
+        
+        <p>The primary compression technique used in JPEG files is lossy compression, which means that some of the original image data is permanently destroyed and cannot be entirely recovered. An image's quality and file size can be traded off by adjusting the compression ratio. The file size decreases with a higher compression ratio, but the loss of visual artifacts and image details is more pronounced.</p>
+
+        <p>It's crucial to note that a JPEG image's quality decreases slightly every time it is altered or recompressed. This can be lessened by saving the initial modification in a lossless format, which will prevent further loss during subsequent edits. Lastly, for dissemination, the image can be changed back to JPEG.</p>
+    </section>
+
+    <section>
+        <h5>JPEG Files</h5>
+        <p>Photographic images are frequently exchanged and stored in JPEG file formats. JPEG/Exif is a common term used to refer to the JPEG file format. It is the most extensively used format for storing photos taken by digital cameras and is found in many of them.</p>
+    
+        <p>JPEG files have the MIME media type image/jpeg. When uploading JPEG photos, however, older versions of Internet Explorer might utilize image/pjpeg.</p>  
+
+        <p>The file extensions.jpg or.jpeg are commonly found on JPEG files. The JPEG/JFIF format supports a maximum image size of 65,535x65,535 pixels, which translates to an aspect ratio of 1:1 and a maximum image size of 4 gigapixels.</p>
+
+        <p>Although JPEG is the most used format, various picture file types are useful for particular uses. Line drawings, text, and iconic visuals, for instance, are best preserved in lossless graphic formats like TIFF, GIF, or PNG. Although there is a lossless coding mode in JPEG, it is not commonly used.</p>
+    </section>
+
+    <section>
+        <h6>A way of image compression</h6>
+        <p>The human visual system is capable of detecting slight variations in brightness, but it is far less sensitive to variations in color (the image's chroma components) in areas of the same brightness. </p>
+
+        <p>For this reason, we can reduce the size of the compressed image by applying more compression to the chroma channel. To separate and process luma and chroma independently, we take an RGB image and transform it into a luma/chroma representation.</p>
+        
+        <p>YCbCr color channels are created from an RGB digital image, which combines Red, Green, and Blue color channels. Y represents the image's brightness, Cb is the blue difference from the green color, and Cr is the red difference from the red color.</p>
+    </section>
+    <footer>
+        <h3>Footer</h3>
+    </footer>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Back</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button onclick="goBack()">Go Back</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF Page</title>
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+    <h2>GIF</h2>  
+    <section>
+        <h3>Introduction</h3>
+        <p>A GIF, short for Graphics Interchange Format, is a popular file format for displaying animated images on the internet. When CompuServe released it in 1987, it became well-known right away because it supported animation and had a small file size.</p>
+        
+        <p>Several separate pictures or frames are combined into a single file to create GIFs. A distinct image can be included in each frame, enabling animation or brief looping sequences. This makes GIFs a useful tool for expressing emotions, adding humor to online discussions, and transmitting succinct visual information.</p>
+
+        <p>Transparency, or the ability for certain parts of an image to be transparent and blend in with the background, is one of the main characteristics of GIFs. Because of this, GIFs are adaptable and simple to incorporate into a wide range of online spaces, such as social media, messaging services, and webpages.</p>
+
+        <p>GIFs are commonly used to showcase brief snippets from films, TV series, or other media, or to convey feelings or reactions. They are widely shared and utilized in a variety of online communities, having become an essential component of internet culture.</p>
+    </section>
+    
+    <section>
+        <h4>GIF Compreesion</h4>
+        <p>The Lempel-Ziv-Welch (LZW) algorithm is the main component of the GIF compression algorithm. It is a lossless data compression algorithm. First, all possible colours in the image are compiled into an initial dictionary and given distinct codes. This dictionary has single-color codes at first. Next, the algorithm builds a dictionary of colour patterns encountered by reading the image data pixel by pixel, starting from the top-left corner. It lowers the total file size by substituting shorter codes for recurring patterns. The dictionary keeps expanding as new patterns are found. The compressed data is exported as a series of variable-length codes that correspond to the image's colour patterns. Every code translates to a colour or colour pattern that can be seen in the picture. Lastly, during encoding, the LZW algorithm dynamically updates the dictionary. The dictionary can be reset to its initial state and cleared when it fills up. This makes it possible for the algorithm to maximize compression and adjust to new colour patterns.</p>
+
+        <img src="GIF Picture1.png" alt="">
+    </section>
+       
+    <Img src="GIF1.gif" alt="">
+    <footer>
+        <h3>Footer</h3>
+    </footer>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Back</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button onclick="goBack()">Go Back</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

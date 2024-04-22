@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNG Page</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+    <h2>PNG</h2>  
+    <section>
+        <h3>Introduction</h3>
+        <p>PNG compression, the most common image compression technology and file format used for picture storage and transmission is one example of lossless image compression. However, PNG is not a compression algorithm originally. Instead, it uses a variety of compression algorithms to reduce image file size while maintaining high-quality visuals. PNG is perfect for graphics, such as logos and icons, when you don't want any portion of the original picture to be lost during compression. Three phases make up PNG compression: filtering, LZ77 compression, and Huffman coding.</p>
+    </section>
+    
+    <section>
+        <h4>Filtering</h4>
+        <p>The purpose of filtering an image during PNG compression is to facilitate and optimize the compression process. The following explains each of the five filtering options:</p>
+        <img src="PHG filter.png" alt="">
+        <img src="PHG filter2.png" alt="">
+        <p>On low-bit-depth (grayscale) images, filters are likewise rarely helpful, however, there have been a few uncommon instances where boosting such an image to 8 bits and then filtering has worked well. Generally speaking, though, filter type None works best.</p>
+
+        <p>It is vital to realize that filtering compares bytes rather than pixels. If the image uses 8-bit coloring, the comparison would be between pixels, as each pixel is one byte. For higher colors, the comparison would be made between the blue (one byte) of this pixel and the blue (one byte) of the other pixel(s). </p>
+        
+        <p>To Handle different pixel formats, PNG treats large pixels (e.g., 24-bit RGB or 64-bit RGBA) as bytes, and only corresponding bytes are compared. For example, red bytes are compared with red bytes, green with green, and blue with blue. If there's an alpha channel or a sample depth of 16 bits, comparisons are made accordingly. The goal is to identify and operate on similar values to enhance compression efficiency.</p>
+    </section>
+
+    <section>
+        <h5>Compression</h5>
+       <p>After filtering, PNG compression employs LZ77 compression. Abraham Lempel and Jacob Ziv invented LZ77, sometimes known as Lempel-Ziv 1977, in 1977. LZ77 employs a sliding window approach to maintain track of a predetermined amount of preceding bytes. The larger the window, the easier and more effective the compression. Using the window, LZ77 searches for repetitive sequences in the pixels. The compression format is the sequence of pixels preceding a repetition, followed by the distance back and the length of the repetition. For instance, use W to represent a white pixel, R to represent a red pixel, D for distance, and L for length.
+
+        We might compress this line of pixels to W [ D=1, L=4] R [ D=1, L=4] [ D=10, L = 5]. The compression simply indicates the distance to the beginning of the first set of five white pixels and then specifies that the next five pixels should be copied, as the last set of five white pixels has already been stated earlier in the line.</p>
+
+       <p>Another example:</p>
+
+       <p>W R W W R W W R W W R W</p>
+
+       <p>This line will be compressed to WRW [ D=3, L = 9 ].</p>
+    </section>
+
+    <section>
+        <h6>Huffman Coding</h6>
+        <p>Huffman coding is a compression technique that evaluates the frequency of literals (characters, numbers, or bytes) in a file and then renders them with a decreased amount of bits. Literals are often represented by one or more bytes, although Huffman coding employs a compact representation that requires fewer bits. This drastically reduces the size of the file. The coding technique assigns shorter bit sequences to the most common literals and longer sequences to less frequent ones. The encoding technique assigns unique codes to each literal by creating a Huffman tree depending on their frequency. During decoding, the Huffman tree is utilized to reverse the compression process and rebuild the original file. Overall, Huffman coding improves the representation of literals based on their frequency, allowing for effective file compression.</p>
+
+        <p>A Huffman tree is constructed using a specific procedure. First, the literals are sorted by frequency in ascending order. subsequently, using a recursive process, the two smallest things are combined to form a single item, which is subsequently returned to the list. This process continues until all of the objects are grouped into a single tree. The generated Huffman tree allows for the calculation of proxy bits. When reading the Huffman tree, the desired literal is obtained by traversing the tree starting with the head node. Each left move corresponds to a 0, while each right move corresponds to a 1. The head node is usually found at the upper centre of the tree. </p>
+
+        <p>PNG compression offers two choices when it comes to utilizing the Huffman tree. The first option involves reading the file and determining the frequencies of the literals present in the image. Subsequently, a Huffman tree is generated specifically for that image. Alternatively, the second option involves employing a pre-defined standard Huffman tree. In the former case, the compressed file must include the relevant information about the custom Huffman tree created for the image. However, when utilizing a standard Huffman tree, the compressed file only needs to provide a reference to the specific standard Huffman tree being used. In PNG compression, the literals refer to the output of the LZ77 compression, which consists of a sequence of bytes with associated distances and lengths.</p>
+    </section>
+    <footer>
+        <h3>Footer</h3>
+    </footer>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Back</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button onclick="goBack()">Go Back</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
